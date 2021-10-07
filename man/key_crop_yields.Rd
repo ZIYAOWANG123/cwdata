@@ -3,7 +3,7 @@
 \docType{data}
 \name{key_crop_yields}
 \alias{key_crop_yields}
-\title{Title of the data}
+\title{Key Crop Yields}
 \format{
 A data frame with 53940 rows and 10 variables:
 \describe{

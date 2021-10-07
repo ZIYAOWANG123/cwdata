@@ -1,6 +1,4 @@
-
-
-#' Title of the data
+#' Key Crop Yields
 #'
 #' More details about the data
 #'
