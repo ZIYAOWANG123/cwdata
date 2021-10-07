@@ -5,25 +5,30 @@
 \alias{key_crop_yields}
 \title{Key Crop Yields}
 \format{
-A data frame with 53940 rows and 10 variables:
+A data frame with 143.825 rows and 5 variables:
+
 \describe{
-\item{price}{price, in US dollars}
-\item{carat}{weight of the diamond, in carats}
+\item{entity}{country entity}
+\item{code}{country code (*Note: contients don't have country code)}
+\item{year}{reported year}
+\item{crop}{the type of the crop}
+\item{tonnes_per_hectare}{crop yeild output unit, in tonnes per hectare}
 ...
 }
 }
 \source{
-The source link of the data
+\href{https://ourworldindata.org/crop-yields}{Our World in Data}
+\href{https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-01/readme.md}{Tidy Tuesday}.
 }
 \usage{
 key_crop_yields
 }
 \description{
-More details about the data
+This data contains agricultural yields across crop types and by country from 1960 onward.
 }
 \section{Background}{
 
-The data was collected from ... over the course of ...
+The data was collected from \emph{Our World in Data}, which is sourced from \strong{Tidy Tuesday}
 }
 
 \examples{
