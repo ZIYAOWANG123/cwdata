@@ -1,0 +1,68 @@
+---
+title: "Key_Crop_Yeild"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Key_Crop_Yeild}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Data Description
+
+This data is from the **Our World in Data**, and it contains the data from the world crop yield from 1961 to 2018.  
+
+The definition for ‘crop yield‘ given by the FAO is ‘Harvested production per unit of harvested area for crop products. In most of the cases yield data are not recorded but obtained by dividing the production data by the data on area harvested. Data on yields of permanent crops are not as reliable as those for temporary crops either because most of the area information may correspond to planted area, as for grapes, or because of the scarcity and unreliability of the area figures reported by the countries, as for example for cocoa and coffee.
+
+## Reference 
+
+Hannah Ritchie and Max Roser (2013) - "Crop Yields". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/crop-yields' [Online Resource]
+
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(cwdata)
+library(tidyverse)
+```
+
+```{r readdata}
+crops <- key_crop_yields %>% 
+  filter(year == 2017)
+
+```
+
+```{r plot1}
+crops %>% 
+  group_by(crop) %>% 
+  summarise(yields = sum(tonnes_per_hectare, na.rm = T)) %>% 
+  ggplot(aes(x = forcats::fct_reorder(crop, yields, .desc = TRUE),
+             y = yields,
+             fill = crop))+
+  geom_col()+
+  labs(x = "Crop Types",
+       y = "Yeilds")
+  theme_bw()
+```
+
+```{r plot2}
+crops %>% 
+  group_by(entity, crop) %>% 
+  summarise(yields = sum(tonnes_per_hectare, na.rm = T)) %>% 
+  ggplot(aes(x = crop,
+             y = yields, 
+             color = ))+
+  geom_line()+
+  labs(title = "2017 Global Crop production",
+       x = "Crop Types",
+       y = "Yeilds")+
+  theme_bw()
+```
+
+
+

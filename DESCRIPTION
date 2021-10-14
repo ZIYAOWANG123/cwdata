@@ -6,7 +6,7 @@ Authors@R:
            family = "Last",
            role = c("aut", "cre"),
            email = "zwan0008@student.monash.edu")
-Description: Lots of datasets (not only one).
+Description: This data is from the *Our World in Data*, and the package can be accessed via its Github website.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -16,3 +16,11 @@ URL: https://github.com/ZIYAOWANG123/cwdata
 BugReports: https://github.com/ZIYAOWANG123/cwdata/issues
 Depends: 
     R (>= 2.10)
+Imports: 
+  tibble
+Suggests: 
+    rmarkdown,
+    knitr,
+    tidyverse,
+    forcats
+VignetteBuilder: knitr
